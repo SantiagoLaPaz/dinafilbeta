@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DINAFIL S.A | INICIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <div class="logo">
+    <img src="./img/DinafilLogo.jpeg" alt="DINAFIL - Hidráulica Incendio Clima">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./pages/sanitaria.html">Sanitaria</a></li>
+      <li><a href="./pages/incendio.html">Incendio</a></li>
+      <li><a href="./pages/clima.html">Clima</a></li>
+      <li><a href="./pages/contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <section class="presentacion">
+    <img src="./img/feriaconstru.png" alt="Feria de la construccion">
+    <div class="texto-presentacion">
+      <h2>Estuvimos presentes en la Feria de la Construcción 2025</h2>
+    </div>
+  </section>
+
+  <section class="galeria">
+  <button class="prev">&lt;</button>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <a href="./pages/productos/drenotube.html" class="item"><img src="./img/drenotube.jpg" ><p>Drenaje Prefabricado</p></a>
+      <a href="./pages/productos/preaislados.html" class="item" ><img src="./img/Preaislado.png" ><p>Sistema de tuberias Preaisladas</p></a>
+      <a href="./pages/productos/sml.html" class="item" ><img src="./img/SML.png" ><p>Fundicion SML</p></a>
+      <a href="./pages/productos/fasered.html" class="item" ><img src="./img/faserred.jpg" ><p>Sistema de tuberias contra incendios</p></a>
+      <a href="./pages/productos/energyplus.html" class="item" ><img src="./img/Energyplus.png"><p>Sistema de evacuación insonorizada</p></a>
+    </div>
+  </div>
+  <button class="next">&gt;</button>
+</section>
+
+<style>
+.galeria {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-container {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.item {
+  min-width: 33.33%; /* 3 tarjetas visibles */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+button.prev, button.next {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+</style>
+
+<script>
+const track = document.querySelector('.carousel-track');
+const items = Array.from(track.children);
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const visible = 3; // tarjetas visibles
+let index = 0;
+
+// Clonamos los primeros y últimos elementos para loop infinito
+for (let i = 0; i < visible; i++) {
+  const firstClone = items[i].cloneNode(true);
+  firstClone.classList.add('clone');
+  track.appendChild(firstClone);
+}
+
+for (let i = items.length - visible; i < items.length; i++) {
+  const lastClone = items[i].cloneNode(true);
+  lastClone.classList.add('clone');
+  track.insertBefore(lastClone, track.firstChild);
+}
+
+// Ajustamos index inicial por los clones
+index = visible;
+updateCarousel(true);
+
+function updateCarousel(jump = false) {
+  const itemWidth = track.children[0].getBoundingClientRect().width;
+  if (jump) track.style.transition = 'none';
+  else track.style.transition = 'transform 0.5s ease-in-out';
+  track.style.transform = `translateX(-${index * itemWidth}px)`;
+}
+
+// Botones
+nextBtn.addEventListener('click', () => {
+  index++;
+  updateCarousel();
+  track.addEventListener('transitionend', loopCheck);
+});
+
+prevBtn.addEventListener('click', () => {
+  index--;
+  updateCarousel();
+  track.addEventListener('transitionend', loopCheck);
+});
+
+// Loop infinito
+function loopCheck() {
+  const itemWidth = track.children[0].getBoundingClientRect().width;
+  if (track.children[index].classList.contains('clone')) {
+    if (index >= items.length + visible) {
+      index = visible;
+      updateCarousel(true);
+    } else if (index < visible) {
+      index = items.length + visible - 1;
+      updateCarousel(true);
+    }
+  }
+  track.removeEventListener('transitionend', loopCheck);
+}
+
+// Auto-desplazamiento
+let speed = 4000; // 4 segundos
+setInterval(() => {
+  index++;
+  updateCarousel();
+  track.addEventListener('transitionend', loopCheck);
+}, speed);
+</script>
+
+  <footer>
+    <p>&copy; 2025 DINAFIL - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+
+Soldadura para cobre Plata 2%

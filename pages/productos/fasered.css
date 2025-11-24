@@ -1,0 +1,124 @@
+:root {
+  --color-primario: #1a73e8;
+  --color-secundario: #0d47a1;
+  --color-texto: #222;
+  --color-fondo: #f5f5f5;
+  --color-boton: #1a73e8;
+  --color-boton-hover: #0d47a1;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* ===== HEADER EXACTO DEL INDEX ===== */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #006DB3;
+  padding: 25px 0 10px 0;
+  width: 100%;
+}
+
+header .logo img {
+  height: 90px;
+}
+
+nav {
+  width: 100%;
+  background: #004F87;
+  padding: 14px 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 65px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== PRODUCTO ===== */
+.producto-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.producto-container img {
+  width: 380px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.producto-info {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.producto-info h1 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  color: var(--color-primario);
+}
+
+.producto-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.botones {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.botones a {
+  padding: 10px 20px;
+  background: var(--color-boton);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.botones a:hover {
+  background: var(--color-boton-hover);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  background: #004F87;
+  color: white;
+  padding: 15px 0;
+}
