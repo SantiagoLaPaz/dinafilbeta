@@ -1,0 +1,123 @@
+:root {
+  --color-primario: #1a73e8;
+  --color-secundario: #0d47a1;
+  --color-texto: #222;
+  --color-fondo: #f5f5f5;
+  --color-boton: #1a73e8;
+  --color-boton-hover: #0d47a1;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* ===== HEADER EXACTO DEL INDEX ===== */
+header {
+  text-align: center;
+  background-color: #006db2; /* Azul del logo */
+  color: white;
+  padding: 30px 0 10px 0;
+}
+
+.logo img {
+  max-width: 250px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #005c99; /* Azul más oscuro */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #e02826; /* Rojo del logo */
+  border-radius: 5px;
+}
+
+/* ===== PRODUCTO ===== */
+.producto-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.producto-container img {
+  width: 380px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.producto-info {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.producto-info h1 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  color: var(--color-primario);
+}
+
+.producto-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.botones {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.botones a {
+  padding: 10px 20px;
+  background: var(--color-boton);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.botones a:hover {
+  background: var(--color-boton-hover);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  background: #004F87;
+  color: white;
+  padding: 15px 0;
+}
